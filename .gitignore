@@ -1,0 +1,25 @@
+# Ignorar arquivos de sistema Python
+__pycache__/
+*.py[cod]
+
+# Ignorar arquivos de ambiente virtuais
+.env
+venv/
+
+# Ignorar configurações locais do VS Code
+.vscode/
+
+# Ignorar arquivos de dados temporários gerados pelo script
+# (Opcional: se você quiser que o usuário baixe os exemplos, não coloque isso. 
+# Se quiser que o repo venha limpo, mantenha).
+measures_enriched.csv
+measures_for_ai.csv
+model_structure.json
+pbi_config.json
+
+# --- Pasta de Saída (Seus arquivos gerados) ---
+_glb_projects/
+
+# Ignorar arquivos de sistema operacional
+.DS_Store
+Thumbs.db
