@@ -100,10 +100,10 @@ Dentro da pasta do projeto, normalmente você verá algo como:
 **(Opcional — prints de referência)**  
 Se você estiver usando a mesma estrutura do pacote de documentação, os prints podem ficar assim no repositório:
 
-- `docs/assets/estrutura_pastas_tela1.png`  
-- `docs/assets/estrutura_pastas_tela2.png`  
-- `docs/assets/estrutura_pastas_tela3.png`  
-- `docs/assets/estrutura_pastas_tela4.png`
+- `assets/estrutura_pastas_tela1.png`  
+- `assets/estrutura_pastas_tela2.png`  
+- `assets/estrutura_pastas_tela3.png`  
+- `assets/estrutura_pastas_tela4.png`
 
 ---
 
