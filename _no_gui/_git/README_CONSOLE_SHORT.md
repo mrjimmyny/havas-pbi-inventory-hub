@@ -26,9 +26,26 @@ Pacote **portátil (ZIP)** para rodar o inventário do Power BI via **Console (C
 
 ---
 
+---
+
+## Pré-requisito extra (V3 / XMLA): .NET SDK x64 (obrigatório)
+
+A etapa **V3** usa o conector **PbiInventoryXmla.exe** (XMLA).  
+Se você **não tiver o .NET SDK x64 (idealmente 8.x / net8)** instalado, a V3 **não roda** e o inventário fica **incompleto**.
+
+**Download oficial (.NET):**
+- `https://aka.ms/dotnet/download`
+
+**O que instalar (Windows):**
+- **.NET 8 SDK (x64)** (recomendado)
+
+**Como validar:**
+- `dotnet --version`
+
 ## Arquivos importantes
 - `app\framework_full.py` → orquestrador principal (Console)
 - `app\PbiInventoryXmla.exe` → etapa V3 (.NET XMLA que substitui o DAX Studio)
+  - Requer **.NET SDK x64** (idealmente **8.x / net8**)
 - `app\notion_config.json` → config do Notion (obrigatório)
 - `app\ai_config.json` → config de IA (opcional)
 - `app\pbi_config.json` → template (copiar para a pasta do seu PBIP)

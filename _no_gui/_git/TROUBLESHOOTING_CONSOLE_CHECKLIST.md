@@ -13,6 +13,7 @@ Antes de pedir ajuda, tenha:
 - ✅ print do erro (se possível)
 - ✅ `pbi_config.json` **sem tokens**
 - ✅ versão do Python: `python --version`
+- ✅ versão do .NET: `dotnet --version` (obrigatório para V3)
 
 ---
 
@@ -84,6 +85,30 @@ A pasta do projeto deve conter:
 - ajuste o caminho no `-p / --project-dir`
 
 ---
+
+---
+
+## 5B) V3 não roda / PbiInventoryXmla.exe falha — falta .NET SDK x64
+**Causa provável:** sua máquina não tem **.NET SDK x64** (idealmente **8.x / net8**) instalado.
+
+### Como validar
+- CMD/PowerShell:
+  - `dotnet --version`
+  - `dotnet --info`
+
+Se `dotnet` não for reconhecido, o SDK não está instalado (ou não entrou no PATH).
+
+### Como resolver
+1) Baixe e instale o **.NET 8 SDK (x64)**:  
+   `https://aka.ms/dotnet/download`
+2) Feche e reabra o terminal
+3) Rode novamente o Framework
+
+### Plano B (se não conseguir instalar)
+Você consegue rodar o Framework, mas o inventário fica **incompleto** (sem V3).  
+No `pbi_config.json`, desative:
+- `"run_v3_dotnet": false`
+
 
 ## 6) Falha de conexão XMLA / Power BI
 Sintomas: erro no V3 (.NET) ou mensagens de conexão.

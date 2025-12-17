@@ -39,6 +39,10 @@
 - **Pasta do Framework** extraída localmente (não em rede/OneDrive).
 - **Projeto Power BI no formato PBIP** (não funciona com PBIX direto).
 
+> **IMPORTANTE (V3 / XMLA):** a etapa **V3** usa o conector **PbiInventoryXmla.exe**.  
+> Se você **não tiver o .NET SDK x64 (idealmente 8.x / net8)** instalado, a V3 **não roda** e o inventário fica **incompleto**.
+
+
 > **Por que PBIP?** porque o inventário lê a estrutura do projeto em pastas e gera outputs no diretório do projeto.  
 > **PBIP garante acesso aos metadados** de forma estruturada.
 
@@ -169,6 +173,43 @@ Você deve ver algo como `Python 3.14.x`.
 > Se aparecer “python não é reconhecido”, vá no troubleshooting (seção no final deste README + checklist separado).
 
 ---
+
+### 5.3 Instalar .NET SDK x64 (obrigatório para V3 / XMLA) + validar
+
+> A etapa **V3** (conector XMLA `PbiInventoryXmla.exe`) depende do **.NET SDK x64**, idealmente **8.x** (alinhado com `net8`).  
+> Sem isso, a execução **não quebra** o Framework inteiro, mas o inventário fica **incompleto** (a V3 falha ou é pulada).
+
+#### 5.3.1 Baixar e instalar
+1) Abra o link oficial de download do .NET:  
+   `https://aka.ms/dotnet/download`
+2) Baixe e instale:
+   - **.NET 8 SDK (x64)** (recomendado)
+3) Finalize a instalação e **feche e reabra** o terminal.
+
+> Se sua máquina corporativa bloquear a instalação, acione o time de IT.
+
+#### 5.3.2 Validar a instalação (obrigatório)
+Abra um terminal e rode:
+
+**CMD**
+```bat
+dotnet --version
+dotnet --info
+```
+
+**PowerShell**
+```powershell
+dotnet --version
+dotnet --info
+```
+
+Se o comando `dotnet` não existir, o SDK não está instalado ou não entrou no PATH.
+
+#### 5.3.3 Se você NÃO conseguir instalar o .NET SDK
+Você ainda consegue rodar o Framework, mas com inventário **incompleto** (sem V3).  
+Para evitar erro/ruído, desligue a V3 no `pbi_config.json`:
+- `"run_v3_dotnet": false`
+
 
 <a id="pbip"></a>
 ## 6) Preparar o projeto Power BI (PBIX → PBIP)
